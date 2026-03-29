@@ -1,6 +1,6 @@
 # 📋 MÉMOS ÉTUDES CLINIQUES — CARDIOLOGIE CHU NANTES
 ### Insuffisance Cardiaque & Cardiomyopathies & Rythmologie & USIC
-*Piqûres de rappel pour le screening — à diffuser par mail aux investigateurs*
+#TeamCoeur - #ChaqueInclusionCompte .
 
 ---
 ---
@@ -9,34 +9,34 @@
 
 ---
 
-### 🔬 BONFIRE — IC à FEVG altérée récupérée
+### 🔬 BONFIRE — IC à FEVG altérée puis normalisée
 
-📌 **Arrêt vs poursuite des bêta-bloquants** chez des patients dont la FEVG s'est normalisée ≥ 50% après avoir été altérée ≤ 45% (randomisé 1:1)
+📌 **Arrêt vs poursuite des bêta-bloquants** chez des patients dont la FEVG s'est normalisée
 
 ✅ **Principaux critères d'inclusion**
 - Antécédent de FEVG ≤ 45% (même ancien) + FEVG normalisée ≥ 50%
-- Sous bêta-bloquants de l'IC depuis **≥ 12 mois** + traitement médical optimal de l'ICFER (au minimum IEC/ARA2 ou ARNI + gliflozine)
+- Sous bêta-bloquants de l'IC depuis ≥ 12 mois + traitement médical optimal de l'ICFER (au minimum IEC/ARA2 ou ARNI + gliflozine)
 - NYHA 1 ou 2 et pas d'hospitalisation pour IC dans les 6 derniers mois
 
 📞 Océane SALOMON — DECT 65717 — oceane.salomon@chu-nantes.fr
 
 ---
 
-### 🔬 EASi PROTKT (Boehringer) — prévention de l'IC chez diabétiques à haut risque CV
+### 🔬 EASi PROTEKT — prévention de l'IC chez diabétiques à haut risque CV
 
-📌 **Vicadrostat + empagliflozine vs placebo + empagliflozine** (randomisé 1:1)
+📌 **Vicadrostat + empagliflozine vs placebo + empagliflozine**
 
 ✅ **Principaux critères d'inclusion**
-- Diabète de type 2 **ET** HTA (≥ 1 traitement) **ET** ATCD de MCV établie (coronaropathie, AOMI, AVC/AIT, ou toute sténose artérielle > 50%)
-- **+** au moins 1 critère parmi : insuline, Nt-proBNP > 125, HVG ECG/ETT, ATCD de FA/flutter, PA ≥ 140/90 mmHg sous ≥ 2 traitements, UACR > 200 mg/g
+- Diabète de type 2 **ET** HTA (≥ 1 traitement) **ET** ATCD de MCV établie (définition large : coronaropathie, AOMI, AVC/AIT, ou toute sténose artérielle > 50%)
+- + au moins 1 critère parmi : insuline, Nt-proBNP > 125, HVG ECG/ETT, ATCD de FA/flutter, PA ≥ 140/90 mmHg sous ≥ 2 traitements, UACR > 200 mg/g
 
 📞 Patricia CHARPENTIER — DECT 65438 — patricia.charpentier@chu-nantes.fr
 
 ---
 
-### 🔬 BRANCH-HF (Pfizer) — ICFEP + surpoids
+### 🔬 BRANCH-HF — ICFEP + surpoids ou diabète
 
-📌 **Inhibiteur de BDK** (métabolisme des acides gras branchés) à 3 doses vs placebo dans l'ICFEP avec BMI > 27
+📌 **Inhibiteur de BDK** (métabolisme des acides gras branchés) vs placebo dans l'ICFEP avec BMI > 27
 
 ✅ **Principaux critères d'inclusion**
 - ICFEP diagnostiquée depuis > 3 mois : NYHA 2-3-4, FEVG ≥ 40% (jamais de FEVG < 40% antérieure)
@@ -49,9 +49,9 @@
 
 ---
 
-### 🔬 LEVEL 2 (Tenax) — ICFEP compliquée d'HTP post-capillaire
+### 🔬 LEVEL 2  — ICFEP compliquée d'HTP post-capillaire
 
-📌 **Lévosimendan per os vs placebo** chez des patients avec ICFEP et hypertension pulmonaire post-capillaire documentée au KT droit (Randomisée 2:1)
+📌 **Lévosimendan per os vs placebo** chez des patients avec ICFEP et hypertension pulmonaire post-capillaire documentée au KT droit
 
 ✅ **Principaux critères d'inclusion**
 - NYHA 2–4 et FEVG ≥ 40% — Âge 12 à 85 ans
@@ -66,7 +66,7 @@
 
 ### 🔬 ELEVATE-HFpEF — ICFEP
 
-📌 **Stimulation cardiaque à fréquence cardiaque personnalisée vs VVI back-up** chez des patients avec ICFEP (Randomisée 1:1 — tous les patients reçoivent un pacemaker avec stimulation physiologique)
+📌 **Stimulation cardiaque à fréquence cardiaque personnalisée vs VVI back-up** chez des patients avec ICFEP (tous les patients étant implanté d'un PM avec stim physiologique)
 
 ✅ **Principaux critères d'inclusion**
 - FEVG > 50% et âge > 40 ans
@@ -80,7 +80,7 @@
 
 ### 🔬 POLARIS — ICFEP + obésité
 
-📌 **Amycrétine** (analogue combiné amyline + GLP-1) vs placebo dans l'ICFEP avec obésité (Randomisé 1:1)
+📌 **Amycrétine** (analogue combiné amyline + GLP-1) vs placebo dans l'ICFEP avec obésité
 
 ✅ **Principaux critères d'inclusion**
 - FEVG > 40% + critère de dysfonction diastolique (OG dilatée, HBG…)
@@ -130,7 +130,7 @@
 📌 Registre national des amyloses. Simple **signature d'une non-opposition**. Aucune contrainte supplémentaire.
 
 ✅ **Critère d'inclusion**
-- Tout diagnostic d'amylose cardiaque (ATTRwt, ATTRv ou AL) — **diagnostic ancien ou récent accepté**
+- Tout diagnostic d'amylose cardiaque (ATTRwt, ATTRv ou AL) — **diagnostic ancien ou récent**
 - 💡 Objectif : viser l'exhaustivité — penser à proposer à tous vos patients amyloses !
 
 📞 Sophie CLÉRO — DECT 68654 — sophie.clero@chu-nantes.fr
@@ -184,7 +184,7 @@
 
 ### 🔬 LA-HCM — Strain atrial altéré dans la CMH
 
-📌 **Rivaroxaban (Xarelto) vs stratégie standard** chez des patients CMH en rythme sinusal avec strain OG altéré (Randomisé 1:1)
+📌 **Rivaroxaban (Xarelto) vs stratégie standard** chez des patients CMH en rythme sinusal avec strain OG sévèrement altéré
 
 ✅ **Principaux critères d'inclusion**
 - CMH sarcomérique (mutée ou non) — âge **40 à 80 ans** — poids 50 à 120 kg
@@ -197,12 +197,12 @@
 
 ### 🔬 BRAVE — Dysplasie Arythmogène du Ventricule Droit (DAVD)
 
-📌 **Spironolactone vs placebo** sur la détérioration du ventricule droit et les arythmies ventriculaires dans la DAVD (Randomisée, double aveugle)
+📌 **Spironolactone vs placebo** sur la détérioration du ventricule droit et les arythmies ventriculaires dans la DAVD
 
 ✅ **Principaux critères d'inclusion**
-- Diagnostic de DAVD selon les critères de la **Task Force**
+- Diagnostic de DAVD selon les critères de la Task Force
 - FEVG > 40% — Adulte ≥ 18 ans
-- Sous traitement médical optimisé comprenant des **bêta-bloquants**
+- Sous traitement médical optimisé comprenant des bêta-bloquants
 
 📞 Anaelle RAOUL — DECT 68870 — anaelle.raoul@chu-nantes.fr
 
@@ -215,10 +215,10 @@
 
 ### 🔬 EDEARLY-AF — Ablation précoce de la FA chez les patients âgés
 
-📌 **Ablation endocavitaire (IVP) vs prise en charge conventionnelle** de la FA chez les patients ≥ 75 ans (Randomisé 1:1)
+📌 **Ablation endocavitaire (IVP) vs prise en charge conventionnelle** de la FA chez les patients ≥ 75 ans
 
 ✅ **Principaux critères d'inclusion**
-- FA paroxystique (ou récidivante ou persistante précoce) diagnostiquée pour la première fois **< 12 mois**
+- FA paroxystique (ou récidivante ou persistante précoce) diagnostiquée pour la première fois < 12 mois
 - Âge **≥ 75 ans**
 
 📞 Bastien OUVRARD — DECT 68540 — bastien.ouvrard@chu-nantes.fr
@@ -227,12 +227,12 @@
 
 ### 🔬 DILEMMA — DAI en prévention primaire après 70 ans
 
-📌 Évaluation de l'intérêt d'implanter un **DAI en prévention primaire** chez les patients ≥ 70 ans (non-infériorité, randomisée ouverte)
+📌 Évaluation de l'intérêt d'implanter un **DAI en prévention primaire** chez les patients ≥ 70 ans
 
 ✅ **Principaux critères d'inclusion**
 - Âge **≥ 70 ans** avec indication théorique de DAI en prévention primaire (y compris la question CRT-P vs CRT-D)
-- FEVG **≤ 35%** — NYHA II ou III
-- Traitement optimisé de l'insuffisance cardiaque depuis **≥ 3 mois**
+- **FEVG ≤ 35%** — NYHA II ou III
+- Traitement optimisé de l'insuffisance cardiaque depuis ≥ 3 mois
 
 📞 Bastien OUVRARD — DECT 68540 — bastien.ouvrard@chu-nantes.fr
 
@@ -252,11 +252,11 @@
 
 ### 🔬 NICD-CRT — Resynchronisation dans le bloc non gauche non droit
 
-📌 **CRT active vs CRT off** chez des patients insuffisants cardiaques avec bloc indifférencié (ni BBGG ni BBDG) (Randomisée double aveugle)
+📌 **CRT active vs CRT off** chez des patients insuffisants cardiaques avec bloc indifférencié (ni BBG ni BBD)
 
 ✅ **Principaux critères d'inclusion**
 - NYHA 2 à 4 et QRS > 130 ms
-- Morphologie **NICD** (ni BBGG ni BBDG) :
+- Morphologie de bloc indifférencié **NICD** (ni BBG ni BBD) : (envoyer ECG en cas de doute)
   - Pas de R large/encoche en I, aVL, V5, V6
   - Onde Q présente en I, V5, V6
   - Pas de rsr'/rsR'/rSR' en V1–V2
@@ -267,10 +267,10 @@
 
 ### 🔬 SUPPRESS — Traitement prophylactique des ESV fréquentes asymptomatiques
 
-📌 **Traitement antiarythmique vs abstention** pour prévenir la cardiomyopathie rythmique chez les patients avec ESV fréquentes et FEVG normale (Randomisé, multicentrique)
+📌 **Traitement antiarythmique vs abstention** pour prévenir la cardiomyopathie rythmique chez les patients avec ESV fréquentes et FEVG normale
 
 ✅ **Principaux critères d'inclusion**
-- Âge 18–85 ans — ESV **> 10%** — Patient **asymptomatique**
+- Âge 18–85 ans — **ESV > 10%** — Patient asymptomatique
 - FEVG normale (> 55%)
 
 📞 Bastien OUVRARD — DECT 68540 — bastien.ouvrard@chu-nantes.fr
@@ -279,7 +279,7 @@
 
 ### 🔬 Come-TAVI — BBG de novo post-TAVI : surveillance vs EEP
 
-📌 **Holter 28 jours vs algorithme guidé par EEP** pour le BBG de novo persistant après TAVI (Randomisée Bayésienne)
+📌 **Holter 28 jours vs algorithme guidé par EEP** pour le BBG de novo persistant après TAVI
 
 ✅ **Principaux critères d'inclusion**
 - **BBG de novo persistant à J1 post-TAVI** (QRS ≥ 120 ms)
@@ -289,12 +289,12 @@
 
 ---
 
-### 🔬 HF-RELIEF — FA permanente + ICFEP : ablation du NAV vs contrôle de fréquence
+### 🔬 HF-RELIEF — FA permanente + ICFEP
 
-📌 **Ablation du NAV + PM vs traitement médical** chez des patients avec FA permanente et ICFEP (Randomisée)
+📌 **Ablation du NAV + PM vs contrôle de fréquence par traitement médical** chez des patients avec FA permanente et ICFEP
 
 ✅ **Principaux critères d'inclusion**
-- FA permanente **> 6 mois** — QRS < 130 ms — FEVG préservée
+- **FA permanente > 6 mois** — QRS < 130 ms — **FEVG préservée**
 - NYHA ≥ 2 — âge > 65 ans — ≥ 1 hospitalisation pour IC dans l'année
 - FC contrôlée < 110 bpm sur 24h
 
@@ -302,12 +302,12 @@
 
 ---
 
-### 🔬 LBAP-TAVI — PM post-TAVI : stimulation branche gauche vs VD classique
+### 🔬 LBAP-TAVI — indication de PM post-TAVI
 
-📌 **Stimulation de l'aire de la branche gauche vs stimulation VD classique** après TAVI (Randomisée, multicentrique)
+📌 **Stimulation de l'aire de la branche gauche vs stimulation VD classique** après TAVI
 
 ✅ **Principaux critères d'inclusion**
-- TAVI implanté dans les **3 derniers mois** — FEVG préservée (> 50%)
+- **TAVI implanté dans les 3 derniers mois** — FEVG préservée (> 50%)
 - Indication au PM selon les recommandations (BAV ou autre trouble conductif)
 
 📞 Bastien OUVRARD — DECT 68540 — bastien.ouvrard@chu-nantes.fr
@@ -316,11 +316,11 @@
 
 ### 🔬 Li-ARVC — Inflammation locale dans la DAVD (contrôles uniquement)
 
-📌 Étude physiopathologique cas-témoins — **Recrutement de contrôles uniquement** (quota DAVD atteint)
+📌 **Reste du recrutement de contrôles uniquement** (quota DAVD atteint)
 
 ✅ **Critères d'inclusion (contrôles)**
-- ≥ 18 ans, sans cardiopathie, admis pour ablation d'un faisceau de Kent / flutter commun
-- Recherche de 3 contrôles masculins : 74–84 ans / 55–65 ans / 60–70 ans
+- ≥ 18 ans, sans cardiopathie, **admis pour ablation d'un faisceau de Kent / flutter commun**
+- Hommes de  55–65 ans / 60–70 ans / 74–84 ans
 
 📞 Anaelle RAOUL — DECT 68870 — anaelle.raoul@chu-nantes.fr
 
@@ -340,11 +340,11 @@
 
 ### 🔬 Cardurion 202 — TV catécholergique sur mutation RYR2
 
-📌 **CRD-4730 vs placebo** dans la tachycardie ventriculaire polymorphe catécholaminergique (Phase II, double aveugle)
+📌 **CRD-4730 vs placebo** dans la TV polymorphe catécholaminergique
 
 ✅ **Principaux critères d'inclusion**
-- Adulte ≥ 18 ans avec **mutation pathogène RYR2**
-- ESV > 10/min ou bigéminisme
+- Adulte ≥ 18 ans avec **mutation pathogène sur le gène RYR2**
+- **ESV > 10/min** ou bigéminisme
 - Sous ≥ 1 antiarythmique (bêta-bloquants autorisés, hors amiodarone) en dose stable depuis ≥ 4 semaines
 
 📞 Anaelle RAOUL — DECT 68870 — anaelle.raoul@chu-nantes.fr
@@ -356,72 +356,72 @@
 
 ---
 
-### 🔬 Dyna-MI — Scintigraphie dynamique pour sténoses résiduelles post-SCA
+### 🔬 Dyna-MI — SCA avec lésions résiduelles pluri-tronculaires
 
-📌 Étude pilote — **Scintigraphie myocardique de perfusion dynamique vs FFR invasive** pour évaluer les sténoses non coupables après SCA (Prospectif, simple bras)
+📌 **Scintigraphie myocardique de perfusion dynamique vs FFR invasive** pour évaluer les sténoses non coupables après SCA
 
 ✅ **Principaux critères d'inclusion**
-- SCA (ST+ ou non ST+) avec **atteinte coronaire pluritronculaire** : au moins une sténose non coupable > 50% jugée revascularisable
+- SCA (ST+ ou non ST+) avec **atteinte coronaire pluritronculaire** : **au moins une sténose non coupable > 50%** jugée revascularisable
 
-📞 Alexandra AUVRIGNON — DECT 72004 — alexandra.auvrignon@chu-nantes.fr
+📞 ? — DECT  — @chu-nantes.fr
 
 ---
 
 ### 🔬 LEVOHEARTSHOCK — Lévosimendan précoce dans le choc cardiogénique
 
-📌 **Lévosimendan vs placebo** en addition d'une stratégie conventionnelle d'inotropes dans le choc cardiogénique (Phase 3, double aveugle)
+📌 **Lévosimendan vs placebo** en addition d'une stratégie conventionnelle d'inotropes dans le choc cardiogénique
 
 ✅ **Principaux critères d'inclusion**
-- Patient majeur en **choc cardiogénique** avec volume intravasculaire adéquat
+- Patient majeur en **choc cardiogénique**
 - Sous **noradrénaline** (MAP ≥ 65 mmHg depuis 3h–24h, dose < 1 µg/kg/min) **et/ou dobutamine ≥ 5 µg/kg/min** depuis 3h–24h
 - Hypoperfusion tissulaire : ≥ 1 signe parmi (lactate ≥ 2 mmol/l, marbrures, TRC > 3 sec, oligurie, ScVO2 ≤ 60%, gradient veineux-artériel de CO2 ≥ 5 mmHg)
 
-📞 Alexandra AUVRIGNON — DECT 72004 — alexandra.auvrignon@chu-nantes.fr
+📞 ? — DECT  — @chu-nantes.fr
 
 ---
 
 ### 🔬 HOMI-LUNG-HAP — Microbiome et maladies CV après pneumonie hospitalière
 
-📌 Étude physiopathologique observationnelle — **Interactions hôte-microbiome après pneumopathie** chez des patients avec SCA (Multicentrique)
+📌 **Interactions hôte-microbiome après pneumopathie** chez des patients avec SCA
 
 ✅ **Principaux critères d'inclusion**
 - Hospitalisé pour **SCA** (40–80 ans) — inclusion dans les **7 jours** suivant l'hospitalisation
 
-📞 Helena FETTRE / Marine RENARD — DECT 68573 / 68546
+📞 Alexandre AUVRIGNON — DECT 72004 - alexandra.auvrignon@chu-nantes.fr
 
 ---
 
 ### 🔬 ARGO — Colchicine dans la myocardite aiguë
 
-📌 **Colchicine vs placebo** pour réduire le rehaussement tardif à l'IRM et le risque de complications dans la myocardite aiguë (Phase III, double aveugle)
+📌 **Colchicine vs placebo** pour réduire le rehaussement tardif à l'IRM et le risque de complications dans la myocardite aiguë
 
 ✅ **Principaux critères d'inclusion**
 - Adulte 18–65 ans, hospitalisé pour **myocardite aiguë** (symptômes ≤ 21 jours)
 - Diagnostic confirmé par **IRM cardiaque** (critères de Lake Louise)
 
-📞 Cyndie ROULET — DECT 65115 — cyndie.roulet@chu-nantes.fr
+📞 Léa FONTENEAU — DECT 82740 — lea.fonteneau@chu-nantes.fr
 
 ---
 
 ### 🔬 EACVI INFLAME — Registre imagerie des atteintes cardiaques inflammatoires
 
-📌 Registre observatoire — **Paramètres d'imagerie prédictifs de complications CV** dans les atteintes cardiaques auto-immunes/inflammatoires
+📌 Registre — **Paramètres d'imagerie prédictifs de complications CV** dans les atteintes cardiaques auto-immunes/inflammatoires
 
 ✅ **Critère d'inclusion**
-- Patient majeur adressé en **IRM ou TEP cardiaque** pour suspicion d'atteinte CV liée à : myocardite, péricardite, MINOCA, Tako-Tsubo ou cardiomyopathie inflammatoire
+- Patient majeur adressé en **IRM ou TEP cardiaque** pour suspicion d'atteinte CV liée à : **myocardite, péricardite, MINOCA, Tako-Tsubo ou cardiomyopathie inflammatoire**
 
-📞 Cyndie ROULET — DECT 65115 — cyndie.roulet@chu-nantes.fr
+📞 Léa FONTENEAU — DECT 82740 — lea.fonteneau@chu-nantes.fr
 
 ---
 
 ### 🔬 PROJET DESTIVA — Application numérique de prévention cardio-neurovasculaire
 
-📌 Étude pilote — Impact d'une **application numérique (DESTIVA)** sur la prévention secondaire/tertiaire des maladies cardio-neurovasculaires
+📌 Étude pilote — Impact d'une **application numérique (DESTIVA)** sur la prévention secondaire des maladies cardio-neurovasculaires
 
 ✅ **Principaux critères d'inclusion**
 - Patient majeur avec **événement cardio-neurovasculaire qualifiant < 30 jours** : IDM, revascularisation coronaire, AVC ischémique, endartériectomie carotidienne ou revascularisation AOMI
 
-📞 Cyndie ROULET — DECT 65115 — cyndie.roulet@chu-nantes.fr
+📞 Léa FONTENEAU — DECT 82740 — lea.fonteneau@chu-nantes.fr
 
 ---
 
@@ -452,4 +452,4 @@
 📞 Léa FONTENEAU — DECT 82740 — lea.fonteneau@chu-nantes.fr
 
 ---
-*Pour toute question sur les critères détaillés ou les critères d'exclusion, contacter directement l'ARC référent.*
+*Pour toute question sur les critères détaillés ou les critères d'exclusion, contacter directement l'ARC référent ou le PI de l'étude - cf tableur complet CardioScope disponible sur W:\Thorax-Syst-Nerveux\_Commun\CIC Cardio - Recherche Clinique*
