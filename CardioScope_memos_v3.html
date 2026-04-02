@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CardioScope — Mémos Études Cliniques</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rouge: #C0392B;
+    --rouge-clair: #FDECEA;
+    --bleu: #1B3A6B;
+    --bleu-clair: #EBF0FA;
+    --orange: #D35400;
+    --orange-clair: #FEF0E7;
+    --vert: #1A7A4A;
+    --vert-clair: #E8F5EE;
+    --gris-fond: #F7F7F5;
+    --gris-bord: #E2E0DA;
+    --texte: #1C1C1A;
+    --texte-doux: #5A5A56;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--gris-fond);
+    color: var(--texte);
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 0 60px 0;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--bleu);
+    color: white;
+    padding: 36px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: '♥';
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px;
+    opacity: 0.07;
+    line-height: 1;
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    margin-bottom: 6px;
+  }
+  header p {
+    font-size: 13px;
+    opacity: 0.75;
+    letter-spacing: 0.05em;
+  }
+  header .tags {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  header .tag {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  /* ─── MAIN LAYOUT ─── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    margin-top: 44px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gris-bord);
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-ic .section-icon { background: #FFF3CD; }
+  .section-rythmo .section-icon { background: #D6EAF8; }
+  .section-usic .section-icon { background: #FDEBD0; }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--bleu);
+  }
+  .section-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--texte-doux);
+    background: var(--gris-bord);
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+
+  /* ─── STUDY CARD ─── */
+  .card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--gris-bord);
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .card-header {
+    padding: 16px 20px 14px;
+    border-bottom: 1px solid var(--gris-bord);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .card-emoji { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+  .card-title-block { flex: 1; }
+  .card-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--bleu);
+    line-height: 1.3;
+  }
+  .card-subtitle {
+    font-size: 13px;
+    color: var(--texte-doux);
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+
+  .card-body {
+    padding: 14px 20px;
+  }
+
+  /* ─── CRITÈRES ─── */
+  .criteres-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--texte-doux);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .criteres-label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background: var(--vert);
+    border-radius: 2px;
+  }
+
+  ul.criteres {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 0;
+  }
+  ul.criteres li {
+    padding-left: 18px;
+    position: relative;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--texte);
+  }
+  ul.criteres li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--vert);
+    font-size: 12px;
+    top: 1px;
+    font-weight: 600;
+  }
+  ul.criteres li strong {
+    font-weight: 600;
+    color: var(--bleu);
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--bleu-clair);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--bleu);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .contact .phone-icon { font-size: 14px; flex-shrink: 0; }
+  .contact a {
+    color: var(--bleu);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .contact a:hover { text-decoration: underline; }
+  .contact .sep { color: var(--texte-doux); }
+
+  /* ─── REGISTRE badge ─── */
+  .badge-registre {
+    display: inline-block;
+    background: var(--vert-clair);
+    color: var(--vert);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    max-width: 860px;
+    margin: 40px auto 0;
+    padding: 20px 20px 0;
+    border-top: 1px solid var(--gris-bord);
+    font-size: 12px;
+    color: var(--texte-doux);
+    font-style: italic;
+  }
+
+  /* ─── PRINT ─── */
+  @media print {
+    body { background: white; }
+    .card { break-inside: avoid; box-shadow: none; }
+    header::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📋 Mémos Études Cliniques — Cardiologie CHU Nantes</h1>
+  <p>Insuffisance Cardiaque · Cardiomyopathies · Rythmologie · USIC / Hémodynamique</p>
+  <div class="tags">
+    <span class="tag">#TeamCoeur</span>
+    <span class="tag">#ChaqueInclusionCompte</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     INSUFFISANCE CARDIAQUE
+═══════════════════════════════════════ -->
+<section class="section section-ic">
+  <div class="section-header">
+    <div class="section-icon">💛</div>
+    <h2 class="section-title">Insuffisance Cardiaque</h2>
+    <span class="section-count">7 études</span>
+  </div>
+
+  <!-- BONFIRE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">BONFIRE — IC à FEVG altérée puis normalisée</div>
+        <div class="card-subtitle">Arrêt vs poursuite des bêta-bloquants chez des patients dont la FEVG s'est normalisée</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Antécédent de <strong>FEVG ≤ 45%</strong> (même ancien) + FEVG normalisée <strong>≥ 50%</strong></li>
+        <li>Sous bêta-bloquants de l'IC depuis ≥ 12 mois + traitement médical optimal de l'ICFER (au minimum IEC/ARA2 ou ARNI + gliflozine)</li>
+        <li><strong>NYHA 1 ou 2</strong> et pas d'hospitalisation pour IC dans les 6 derniers mois</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Océane SALOMON</strong>
+        <span class="sep">·</span> DECT 65717
+        <span class="sep">·</span> <a href="mailto:oceane.salomon@chu-nantes.fr">oceane.salomon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EASi PROTKT -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">EASi PROTEKT — prévention de l'IC chez diabétiques à haut risque CV</div>
+        <div class="card-subtitle">Vicadrostat + empagliflozine vs placebo + empagliflozine</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>Diabète de type 2 ET HTA</strong> (≥ 1 traitement) ET ATCD de MCV établie (coronaropathie, AOMI, AVC/AIT, ou toute sténose artérielle > 50%)</li>
+        <li>+ au moins 1 critère parmi : insuline, Nt-proBNP > 125, HVG ECG/ETT, ATCD de FA/flutter, PA ≥ 140/90 mmHg sous ≥ 2 traitements, <strong>UACR > 200 mg/g</strong></li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Patricia CHARPENTIER</strong>
+        <span class="sep">·</span> DECT 65438
+        <span class="sep">·</span> <a href="mailto:patricia.charpentier@chu-nantes.fr">patricia.charpentier@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANCH-HF -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">BRANCH-HF — ICFEP + surpoids ou diabète</div>
+        <div class="card-subtitle">Inhibiteur de BDK (métabolisme des acides gras branchés) vs placebo dans l'ICFEP avec BMI > 27</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>ICFEP diagnostiquée depuis > 3 mois : <strong>NYHA 2-3-4</strong>, FEVG ≥ 40% (jamais de FEVG < 40% antérieure)</li>
+        <li>FEVG 40–50% <em>ou</em> FEVG > 50% avec ≥ 1 critère écho (e/e' ≥ 11, VOG indexé ≥ 34 mL/m², masse VG ind. ≥ 115/95 g/m²)</li>
+        <li><strong>BMI 27–50</strong> (ou &lt; 27 si DT2, analogue GLP-1, ou tour de taille > 94/80 cm)</li>
+        <li>Nt-proBNP élevé (RS: > 150 si BMI > 30 / > 300 si BMI &lt; 30 ; FA: > 300 si BMI > 30 / > 600 si BMI &lt; 30) <em>ou</em> hospit. furosémide IV &lt; 12 mois</li>
+        <li>Traité par gliflozine — Âge 18–80 ans</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Océane SALOMON</strong>
+        <span class="sep">·</span> DECT 65717
+        <span class="sep">·</span> <a href="mailto:oceane.salomon@chu-nantes.fr">oceane.salomon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">LEVEL 2 — ICFEP compliquée d'HTP post-capillaire</div>
+        <div class="card-subtitle">Lévosimendan per os vs placebo dans l'ICFEP avec HTP post-capillaire documentée au KT droit</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>NYHA 2–4</strong> et FEVG ≥ 40% — Âge 12 à 85 ans</li>
+        <li>HTP groupe 2 au cathétérisme droit : PAPO ≥ 18 + PAPm ≥ 30 + POD ≥ 8 mmHg <em>(repos)</em></li>
+        <li><em>ou</em> après lever de jambe passif : PAPO ≥ 20 + PAPm ≥ 32 + POD ≥ 8 mmHg</li>
+        <li><em>ou</em> à l'effort : PAPO ≥ 25 + PAPm ≥ 35 + POD ≥ 10 mmHg</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Karine MAUGENDRE</strong>
+        <span class="sep">·</span> DECT 65741
+        <span class="sep">·</span> <a href="mailto:karine.maugendre@chu-nantes.fr">karine.maugendre@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ELEVATE-HFpEF -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">ELEVATE-HFpEF — ICFEP</div>
+        <div class="card-subtitle">Stimulation cardiaque à FC personnalisée vs VVI back-up (tous les patients implantés d'un PM avec stim physiologique)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>FEVG > 50%</strong> et âge > 40 ans</li>
+        <li>≥ 1 critère parmi : épisode d'IC documenté &lt; 12 mois <em>ou</em> NYHA ≥ 2 + critère d'enrichissement (Nt-proBNP > 400, critères ETT, diurétiques…)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLARIS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">POLARIS — ICFEP + obésité</div>
+        <div class="card-subtitle">Amycrétine (analogue combiné amyline + GLP-1) vs placebo dans l'ICFEP avec obésité</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>FEVG > 40% + critère de dysfonction diastolique (OG dilatée, HBG…)</li>
+        <li><strong>NYHA 2–4</strong> et <strong>BMI > 30</strong></li>
+        <li>Nt-proBNP > 150 (ou > 100 si BMI > 35) en RS / > 300 (ou > 200 si BMI > 35) en FA</li>
+        <li>≥ 1 parmi : DFG 15–60, RAC > 30 mg/g ou hospit. pour IC &lt; 12 mois</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Audrey ERNOULD</strong>
+        <span class="sep">·</span> DECT 82726
+      </div>
+    </div>
+  </div>
+
+  <!-- ARCADIA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">ARCADIA — Insuffisance cardiaque avancée</div>
+        <div class="card-subtitle">Évaluation de l'atteinte cardio-rénale sous dapagliflozine chez des patients en liste de greffe ou bilan pronostique (Cohorte prospective)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>NYHA > 3</strong> et <strong>FEVG &lt; 35%</strong></li>
+        <li>Sous traitement optimal incluant <strong>dapagliflozine</strong> (empagliflozine non éligible)</li>
+        <li>Inscrit sur liste de greffe avec accès > 6 mois <em>ou</em> en parcours pré-greffe (bilan pronostique)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Emilie BOURGEON CONAN</strong>
+        <span class="sep">·</span> DECT 72003
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     AMYLOSE CARDIAQUE
+═══════════════════════════════════════ -->
+<section class="section section-ic">
+  <div class="section-header">
+    <div class="section-icon">💛</div>
+    <h2 class="section-title">Amylose Cardiaque</h2>
+    <span class="section-count">3 études</span>
+  </div>
+
+  <!-- TRITON -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">TRITON — ARN interférent de 4e génération (silencer TTR)</div>
+        <div class="card-subtitle">Nucrésiran (300 mg SC / 6 mois) vs placebo dans l'amylose cardiaque ATTR</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Amylose <strong>ATTR</strong> (wildtype ou héréditaire) — âge ≤ 85 ans</li>
+        <li>Nt-proBNP entre <strong>300 et 8 500 pg/mL</strong> en RS (ou 600–8 500 en FA)</li>
+        <li>ATCD d'IC : ≥ 1 hospitalisation pour IC <em>ou</em> traitement diurétique stable > 1 mois</li>
+        <li>Pouvant recevoir un stabilisateur (tafamidis/acoramidis)</li>
+        <li>Cliniquement stable (pas d'hospitalisation CV dans les 6 dernières semaines)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Patricia CHARPENTIER</strong>
+        <span class="sep">·</span> DECT 65438
+        <span class="sep">·</span> <a href="mailto:patricia.charpentier@chu-nantes.fr">patricia.charpentier@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registre HEAR -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">Registre HEAR <span class="badge-registre">Registre</span></div>
+        <div class="card-subtitle">Registre national des amyloses — simple signature d'une non-opposition. Aucune contrainte supplémentaire.</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Critère d'inclusion</div>
+      <ul class="criteres">
+        <li>Tout diagnostic d'amylose cardiaque (ATTRwt, ATTRv ou AL) — <strong>diagnostic ancien ou récent</strong></li>
+        <li>💡 Objectif : viser l'exhaustivité — penser à proposer à tous vos patients amyloses !</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Sophie CLÉRO</strong>
+        <span class="sep">·</span> DECT 68654
+        <span class="sep">·</span> <a href="mailto:sophie.clero@chu-nantes.fr">sophie.clero@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLEOPATTRA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">CLEOPATTRA — Anticorps déplétteur de TTR</div>
+        <div class="card-subtitle">NNC6019-000 (perfusion IV mensuelle) vs placebo dans l'amylose ATTR</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Amylose <strong>ATTRwt ou ATTRv</strong> — pas de limite d'âge</li>
+        <li>NYHA 1–4 sous diurétique de l'anse + ≥ 1 parmi : ATCD de décompensation cardiaque <em>ou</em> congestion clinique (crépitants, OMI…)</li>
+        <li><strong>Nt-proBNP ≥ 1 000 pg/mL</strong> au screening</li>
+        <li>Traitement médical stabilisé depuis ≥ 1 mois</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Patricia CHARPENTIER</strong>
+        <span class="sep">·</span> DECT 65438
+        <span class="sep">·</span> <a href="mailto:patricia.charpentier@chu-nantes.fr">patricia.charpentier@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     CARDIOMYOPATHIES
+═══════════════════════════════════════ -->
+<section class="section section-ic">
+  <div class="section-header">
+    <div class="section-icon">💛</div>
+    <h2 class="section-title">Cardiomyopathies</h2>
+    <span class="section-count">4 études</span>
+  </div>
+
+  <!-- FORTITUDE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">FORTITUDE — CMH non obstructive</div>
+        <div class="card-subtitle">Ninerafaxstat 200 mg x2/j vs placebo pendant 12 semaines dans la CMH non obstructive symptomatique</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>CMH non obstructive : gradient &lt; 30 mmHg au repos et à Valsalva, épaisseur ≥ 15 mm (ou ≥ 13 mm si apparenté ou mutation)</li>
+        <li>Symptomatique <strong>NYHA 2–3</strong> et FEVG > 55%</li>
+        <li>Nt-proBNP ≥ 125 pg/mL (≥ 300 si FA)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Patricia CHARPENTIER</strong>
+        <span class="sep">·</span> DECT 65438
+        <span class="sep">·</span> <a href="mailto:patricia.charpentier@chu-nantes.fr">patricia.charpentier@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- REMY -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">REMY — Registre SFC des CMH <span class="badge-registre">Registre</span></div>
+        <div class="card-subtitle">Registre national SFC en soins courants — focus sur les patients sous nouvelles thérapeutiques (mavacamten, ninerafaxstat…)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Critère d'inclusion</div>
+      <ul class="criteres">
+        <li>Toute <strong>CMH sarcomérique</strong> (en particulier patients sous nouvelles thérapeutiques)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Océane SALOMON</strong>
+        <span class="sep">·</span> DECT 65717
+        <span class="sep">·</span> <a href="mailto:oceane.salomon@chu-nantes.fr">oceane.salomon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA-HCM -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">LA-HCM — Strain atrial altéré dans la CMH</div>
+        <div class="card-subtitle">Rivaroxaban (Xarelto) vs stratégie standard chez des patients CMH en rythme sinusal avec strain OG sévèrement altéré</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>CMH sarcomérique (mutée ou non) — âge <strong>40 à 80 ans</strong> — poids 50 à 120 kg</li>
+        <li><strong>Rythme sinusal</strong></li>
+        <li><strong>Strain OG réservoir ≤ 20%</strong> (en conditions normales, hors congestion ou HTA non contrôlée)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Océane SALOMON</strong>
+        <span class="sep">·</span> DECT 65717
+        <span class="sep">·</span> <a href="mailto:oceane.salomon@chu-nantes.fr">oceane.salomon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAVE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">BRAVE — Dysplasie Arythmogène du Ventricule Droit (DAVD)</div>
+        <div class="card-subtitle">Spironolactone vs placebo sur la détérioration du VD et les arythmies ventriculaires dans la DAVD</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Diagnostic de DAVD selon les <strong>critères de la Task Force</strong></li>
+        <li>FEVG > 40% — Adulte ≥ 18 ans</li>
+        <li>Sous traitement médical optimisé comprenant des bêta-bloquants</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Anaelle RAOUL</strong>
+        <span class="sep">·</span> DECT 68870
+        <span class="sep">·</span> <a href="mailto:anaelle.raoul@chu-nantes.fr">anaelle.raoul@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     RYTHMOLOGIE
+═══════════════════════════════════════ -->
+<section class="section section-rythmo">
+  <div class="section-header">
+    <div class="section-icon">💙</div>
+    <h2 class="section-title">Rythmologie</h2>
+    <span class="section-count">10 études</span>
+  </div>
+
+  <!-- EDEARLY-AF -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">EDEARLY-AF — Ablation précoce de la FA chez les patients âgés</div>
+        <div class="card-subtitle">Ablation endocavitaire (IVP) vs prise en charge conventionnelle de la FA chez les patients ≥ 75 ans</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>FA paroxystique (ou récidivante ou persistante précoce) diagnostiquée pour la première fois &lt; 12 mois</li>
+        <li>Âge <strong>≥ 75 ans</strong></li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DILEMMA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">DILEMMA — DAI en prévention primaire après 70 ans</div>
+        <div class="card-subtitle">Évaluation de l'intérêt d'implanter un DAI en prévention primaire chez les patients ≥ 70 ans</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Âge <strong>≥ 70 ans</strong> avec indication théorique de DAI en prévention primaire (dont question CRT-P vs CRT-D)</li>
+        <li><strong>FEVG ≤ 35%</strong> — NYHA II ou III</li>
+        <li>Traitement optimisé de l'insuffisance cardiaque depuis ≥ 3 mois</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EPIC-VT -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">EPIC-VT — Ablation TV endo vs endo-épicardique</div>
+        <div class="card-subtitle">Ablation endocardique vs endo-épicardique des TV sur cardiopathie ischémique (Randomisée, multicentrique)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>1ère ablation par radiofréquence d'une <strong>TV sur cardiopathie ischémique</strong></li>
+        <li>Porteur d'un DAI avec télésurveillance active</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPRESS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">SUPPRESS — ESV fréquentes asymptomatiques</div>
+        <div class="card-subtitle">Traitement antiarythmique vs abstention pour prévenir la cardiomyopathie rythmique</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Âge 18–85 ans — <strong>ESV > 10%</strong> — Patient <strong>asymptomatique</strong></li>
+        <li>FEVG normale (> 55%)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Come-TAVI -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">Come-TAVI — BBG de novo post-TAVI : surveillance vs EEP</div>
+        <div class="card-subtitle">Holter 28 jours vs algorithme guidé par EEP pour le BBG de novo persistant après TAVI</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>BBG de novo persistant à J1 post-TAVI</strong> (QRS ≥ 120 ms)</li>
+        <li>Pas d'indication formelle à un PM pour autre raison</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HF-RELIEF -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">HF-RELIEF — FA permanente + ICFEP</div>
+        <div class="card-subtitle">Ablation du NAV + PM vs contrôle de fréquence médicamenteux chez des patients avec FA permanente et ICFEP</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>FA permanente > 6 mois</strong> — QRS &lt; 130 ms — <strong>FEVG préservée</strong></li>
+        <li>NYHA ≥ 2 — âge > 65 ans — ≥ 1 hospitalisation pour IC dans l'année</li>
+        <li>FC contrôlée &lt; 110 bpm sur 24h</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LBAP-TAVI -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">LBAP-TAVI — Indication de PM post-TAVI</div>
+        <div class="card-subtitle">Stimulation de l'aire de la branche gauche vs stimulation VD classique après TAVI</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>TAVI implanté dans les 3 derniers mois</strong> — FEVG préservée (> 50%)</li>
+        <li>Indication au PM selon les recommandations (BAV ou autre trouble conductif)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Bastien OUVRARD</strong>
+        <span class="sep">·</span> DECT 68540
+        <span class="sep">·</span> <a href="mailto:bastien.ouvrard@chu-nantes.fr">bastien.ouvrard@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Li-ARVC -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">Li-ARVC — Inflammation locale dans la DAVD <em>(contrôles uniquement)</em></div>
+        <div class="card-subtitle">Quota DAVD atteint — recrutement de contrôles uniquement</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Critères d'inclusion (contrôles)</div>
+      <ul class="criteres">
+        <li>≥ 18 ans, sans cardiopathie, <strong>admis pour ablation d'un faisceau de Kent / flutter commun</strong></li>
+        <li>Hommes de 55–65 ans / 60–70 ans / 74–84 ans</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Anaelle RAOUL</strong>
+        <span class="sep">·</span> DECT 68870
+        <span class="sep">·</span> <a href="mailto:anaelle.raoul@chu-nantes.fr">anaelle.raoul@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESOUDRE -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">RESOUDRE — Registre mort subite du sportif jeune <span class="badge-registre">Registre</span></div>
+        <div class="card-subtitle">Registre prospectif national — morts subites chez les sportifs de 12 à 35 ans (non-opposition)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>12–35 ans, sans pathologie cardiovasculaire connue</li>
+        <li>ACR brutal non traumatique <strong>pendant ou dans l'heure suivant une pratique sportive</strong></li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Anaelle RAOUL</strong>
+        <span class="sep">·</span> DECT 68870
+        <span class="sep">·</span> <a href="mailto:anaelle.raoul@chu-nantes.fr">anaelle.raoul@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cardurion 202 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">Cardurion 202 — TV catécholergique sur mutation RYR2</div>
+        <div class="card-subtitle">CRD-4730 vs placebo dans la TV polymorphe catécholaminergique</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Adulte ≥ 18 ans avec <strong>mutation pathogène sur le gène RYR2</strong></li>
+        <li><strong>ESV > 10/min</strong> ou bigéminisme</li>
+        <li>Sous ≥ 1 antiarythmique (bêta-bloquants autorisés, hors amiodarone) en dose stable depuis ≥ 4 semaines</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Anaelle RAOUL</strong>
+        <span class="sep">·</span> DECT 68870
+        <span class="sep">·</span> <a href="mailto:anaelle.raoul@chu-nantes.fr">anaelle.raoul@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     USIC / HÉMODYNAMIQUE / TRANSVERSAL
+═══════════════════════════════════════ -->
+<section class="section section-usic">
+  <div class="section-header">
+    <div class="section-icon">🟠</div>
+    <h2 class="section-title">USIC / Hémodynamique / Transversal</h2>
+    <span class="section-count">12 études</span>
+  </div>
+
+  <!-- Dyna-MI -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">Dyna-MI — SCA avec lésions résiduelles pluri-tronculaires</div>
+        <div class="card-subtitle">Scintigraphie myocardique de perfusion dynamique vs FFR invasive pour les sténoses non coupables après SCA</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>SCA (ST+ ou non ST+) avec <strong>atteinte coronaire pluritronculaire</strong> : au moins une sténose non coupable > 50% jugée revascularisable</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVOHEARTSHOCK -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">LEVOHEARTSHOCK — Lévosimendan précoce dans le choc cardiogénique</div>
+        <div class="card-subtitle">Lévosimendan vs placebo en addition d'une stratégie conventionnelle d'inotropes dans le choc cardiogénique</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Patient majeur en <strong>choc cardiogénique</strong></li>
+        <li>Sous <strong>noradrénaline</strong> (MAP ≥ 65 mmHg depuis 3h–24h, dose &lt; 1 µg/kg/min) <strong>et/ou dobutamine ≥ 5 µg/kg/min</strong> depuis 3h–24h</li>
+        <li>Hypoperfusion tissulaire : ≥ 1 signe parmi : lactate ≥ 2 mmol/l, marbrures, TRC > 3 sec, oligurie, ScVO2 ≤ 60%, gradient veineux-artériel de CO2 ≥ 5 mmHg</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMI-LUNG-HAP -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">HOMI-LUNG-HAP — Microbiome et maladies CV après pneumonie hospitalière</div>
+        <div class="card-subtitle">Interactions hôte-microbiome après pneumopathie chez des patients avec SCA</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Hospitalisé pour <strong>SCA</strong> (40–80 ans) — inclusion dans les <strong>7 jours</strong> suivant l'hospitalisation</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARGO -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">ARGO — Colchicine dans la myocardite aiguë</div>
+        <div class="card-subtitle">Colchicine vs placebo pour réduire le rehaussement tardif à l'IRM et le risque de complications dans la myocardite aiguë</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Adulte <strong>18–65 ans</strong>, hospitalisé pour <strong>myocardite aiguë</strong> (symptômes ≤ 21 jours)</li>
+        <li>Diagnostic confirmé par <strong>IRM cardiaque</strong> (critères de Lake Louise)</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Léa FONTENEAU</strong>
+        <span class="sep">·</span> DECT 82740
+        <span class="sep">·</span> <a href="mailto:lea.fonteneau@chu-nantes.fr">lea.fonteneau@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EACVI INFLAME -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">EACVI INFLAME — Registre imagerie des atteintes cardiaques inflammatoires <span class="badge-registre">Registre</span></div>
+        <div class="card-subtitle">Paramètres d'imagerie prédictifs de complications CV dans les atteintes cardiaques auto-immunes/inflammatoires</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Critère d'inclusion</div>
+      <ul class="criteres">
+        <li>Patient majeur adressé en <strong>IRM ou TEP cardiaque</strong> pour suspicion d'atteinte CV liée à : myocardite, péricardite, MINOCA, Tako-Tsubo ou cardiomyopathie inflammatoire</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Léa FONTENEAU</strong>
+        <span class="sep">·</span> DECT 82740
+        <span class="sep">·</span> <a href="mailto:lea.fonteneau@chu-nantes.fr">lea.fonteneau@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTIVA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">PROJET DESTIVA — Application numérique de prévention cardio-neurovasculaire</div>
+        <div class="card-subtitle">Étude pilote — Impact d'une application numérique (DESTIVA) sur la prévention secondaire des maladies cardio-neurovasculaires</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Patient majeur avec <strong>événement cardio-neurovasculaire qualifiant &lt; 30 jours</strong> : IDM, revascularisation coronaire, AVC ischémique, endartériectomie carotidienne ou revascularisation AOMI</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Léa FONTENEAU</strong>
+        <span class="sep">·</span> DECT 82740
+        <span class="sep">·</span> <a href="mailto:lea.fonteneau@chu-nantes.fr">lea.fonteneau@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VICTORION Rides -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">VICTORION Rides — Inclisiran précoce post-SCA</div>
+        <div class="card-subtitle">Inclisiran vs placebo introduit précocement après revascularisation pour SCA (Phase III, double aveugle)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Patient majeur hospitalisé pour <strong>SCA athéromateux</strong> (ST+ ou ST-)</li>
+        <li>Inclusion le lendemain de la revascularisation, avec LDL-C :<br>
+          ≥ 0,7 g/L sous statine haute intensité depuis ≥ 4 semaines<br>
+          ≥ 1 g/L sous statine faible intensité depuis ≥ 4 semaines<br>
+          ≥ 1,25 g/L sans statine depuis ≥ 4 semaines
+        </li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Léa FONTENEAU</strong>
+        <span class="sep">·</span> DECT 82740
+        <span class="sep">·</span> <a href="mailto:lea.fonteneau@chu-nantes.fr">lea.fonteneau@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZENITH -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">ZENITH — Zilbésiran dans l'HTA résistante à haut risque CV</div>
+        <div class="card-subtitle">Zilbésiran vs placebo pour réduire les événements CV majeurs chez les patients hypertendus non contrôlés (Phase III, double aveugle)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Sous <strong>≥ 2 anti-HTA dont un diurétique</strong>, avec <strong>PAS ≥ 145 mmHg</strong> en consultation</li>
+        <li>Âge ≥ 55 ans à haut risque CV <em>ou</em> âge ≥ 18 ans avec maladie CV avérée</li>
+        <li>Haut risque CV : ≥ 2 facteurs parmi : âge ≥ 70 ans, DFGe &lt; 60, albumine/créat > 300, tabagisme actif, FA traitée, CAC > 100, NT-proBNP > 125, DT2 ou IMC ≥ 30</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Léa FONTENEAU</strong>
+        <span class="sep">·</span> DECT 82740
+        <span class="sep">·</span> <a href="mailto:lea.fonteneau@chu-nantes.fr">lea.fonteneau@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- POPULAR-ATLANTIS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">POPULAR-ATLANTIS — Antithrombotique post-TAVI guidé par scanner</div>
+        <div class="card-subtitle">Thérapie antithrombotique personnalisée guidée par TDM vs monothérapie antiplaquettaire à vie après TAVI (sans FA)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>Succès du TAVI</strong></li>
+        <li>Sans fibrillation atriale</li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSE 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">CLOSE 2 — Fermeture de FOP post-AVC</div>
+        <div class="card-subtitle">Fermeture du FOP vs anticoagulants oraux vs traitement antiplaquettaire après AVC associé à un FOP chez les 60–80 ans (3 bras)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Homme ou femme entre <strong>60 et 80 ans</strong> présentant un <strong>AVC ischémique récent (≤ 6 mois)</strong></li>
+        <li>Mise en évidence d'un <strong>FOP</strong></li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ULYSS -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">ULYSS — IMPELLA précoce dans le choc cardiogénique post-SCA</div>
+        <div class="card-subtitle">Implantation précoce de l'IMPELLA vs traitement conventionnel dans le SCA compliqué de choc cardiogénique</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li><strong>SCA ≤ 24 heures</strong> (STEMI + NSTEMI) revascularisé par angioplastie — Âge 18 à 80 ans</li>
+        <li>Choc cardiogénique avec : ≥ 1 critère de <strong>faible débit cardiaque</strong> + ≥ 1 critère de <strong>surcharge gauche</strong> + ≥ 1 critère de <strong>malperfusion</strong></li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MASTER TAVI -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-emoji">🔬</div>
+      <div class="card-title-block">
+        <div class="card-name">MASTER TAVI — TAVI + insuffisance mitrale ou tricuspide sévère</div>
+        <div class="card-subtitle">Évaluation de l'algorithme de prise en charge des patients avec RAo serré et IM ou IT significative après TAVI (Observationnelle, multicentrique)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="criteres-label">Principaux critères d'inclusion</div>
+      <ul class="criteres">
+        <li>Adressé pour <strong>TAVI transfémoral</strong> pour rétrécissement aortique serré</li>
+        <li><strong>Insuffisance mitrale et/ou tricuspide grade 3 à 4/4</strong></li>
+      </ul>
+      <div class="contact">
+        <span class="phone-icon">📞</span>
+        <strong>Alexandra AUVRIGNON</strong>
+        <span class="sep">·</span> DECT 72004
+        <span class="sep">·</span> <a href="mailto:alexandra.auvrignon@chu-nantes.fr">alexandra.auvrignon@chu-nantes.fr</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Pour toute question sur les critères détaillés ou les critères d'exclusion, contacter directement l'ARC référent ou le PI de l'étude — cf. tableur complet CardioScope disponible sur W:\Thorax-Syst-Nerveux\_Commun\CIC Cardio - Recherche Clinique</p>
+</footer>
+
+</body>
+</html>
